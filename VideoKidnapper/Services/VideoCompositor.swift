@@ -116,7 +116,7 @@ enum VideoCompositor {
             parentLayer.addSublayer(layer)
         }
         videoComposition.animationTool = AVVideoCompositionCoreAnimationTool(
-            post: parentLayer, video: videoLayer)
+            postProcessingAsVideoLayer: videoLayer, in: parentLayer)
 
         return ComposedVideo(
             composition: composition,

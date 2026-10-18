@@ -86,7 +86,7 @@ enum VideoExporter {
         for i in 0..<frameCount {
             let time = CMTime(
                 seconds: Double(i) / Double(fps), preferredTimescale: 600)
-            let image = try await generator.image(at: time)
+            let image = try generator.copyCGImage(at: time, actualTime: nil)
             CGImageDestinationAddImage(dest, image, frameProps)
             await MainActor.run { progress(Double(i + 1) / Double(frameCount)) }
         }
