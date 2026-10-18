@@ -1,0 +1,366 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		500000000000000000000001 /* VideoKidnapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000002 /* VideoKidnapperApp.swift */; };
+		500000000000000000000002 /* MediaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000005 /* MediaModels.swift */; };
+		500000000000000000000003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000006 /* ContentView.swift */; };
+		500000000000000000000004 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000007 /* ImportView.swift */; };
+		500000000000000000000005 /* TrimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000008 /* TrimView.swift */; };
+		500000000000000000000006 /* CaptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000009 /* CaptionsView.swift */; };
+		500000000000000000000007 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000010 /* ExportView.swift */; };
+		500000000000000000000008 /* VideoProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000011 /* VideoProjectStore.swift */; };
+		500000000000000000000009 /* VideoImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000012 /* VideoImporter.swift */; };
+		500000000000000000000010 /* VideoCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000013 /* VideoCompositor.swift */; };
+		500000000000000000000011 /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000014 /* VideoExporter.swift */; };
+		500000000000000000000012 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000015 /* PlayerView.swift */; };
+		500000000000000000000013 /* ColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000016 /* ColorHex.swift */; };
+		500000000000000000000014 /* Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000017 /* Formatting.swift */; };
+		500000000000000000000015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 400000000000000000000004 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		400000000000000000000001 /* VideoKidnapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoKidnapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		400000000000000000000002 /* VideoKidnapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoKidnapperApp.swift; sourceTree = "<group>"; };
+		400000000000000000000003 /* VideoKidnapper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VideoKidnapper.entitlements; sourceTree = "<group>"; };
+		400000000000000000000004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		400000000000000000000005 /* MediaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModels.swift; sourceTree = "<group>"; };
+		400000000000000000000006 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		400000000000000000000007 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
+		400000000000000000000008 /* TrimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimView.swift; sourceTree = "<group>"; };
+		400000000000000000000009 /* CaptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionsView.swift; sourceTree = "<group>"; };
+		400000000000000000000010 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		400000000000000000000011 /* VideoProjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProjectStore.swift; sourceTree = "<group>"; };
+		400000000000000000000012 /* VideoImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoImporter.swift; sourceTree = "<group>"; };
+		400000000000000000000013 /* VideoCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCompositor.swift; sourceTree = "<group>"; };
+		400000000000000000000014 /* VideoExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
+		400000000000000000000015 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		400000000000000000000016 /* ColorHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHex.swift; sourceTree = "<group>"; };
+		400000000000000000000017 /* Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatting.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		200000000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000004 /* VideoKidnapper */,
+				100000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000001 /* VideoKidnapper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		100000000000000000000004 /* VideoKidnapper */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000002 /* VideoKidnapperApp.swift */,
+				400000000000000000000003 /* VideoKidnapper.entitlements */,
+				400000000000000000000004 /* Assets.xcassets */,
+				100000000000000000000005 /* Models */,
+				100000000000000000000006 /* Views */,
+				100000000000000000000007 /* Services */,
+				100000000000000000000008 /* Components */,
+			);
+			path = VideoKidnapper;
+			sourceTree = "<group>";
+		};
+		100000000000000000000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000005 /* MediaModels.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		100000000000000000000006 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000006 /* ContentView.swift */,
+				400000000000000000000007 /* ImportView.swift */,
+				400000000000000000000008 /* TrimView.swift */,
+				400000000000000000000009 /* CaptionsView.swift */,
+				400000000000000000000010 /* ExportView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		100000000000000000000007 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000011 /* VideoProjectStore.swift */,
+				400000000000000000000012 /* VideoImporter.swift */,
+				400000000000000000000013 /* VideoCompositor.swift */,
+				400000000000000000000014 /* VideoExporter.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		100000000000000000000008 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				400000000000000000000015 /* PlayerView.swift */,
+				400000000000000000000016 /* ColorHex.swift */,
+				400000000000000000000017 /* Formatting.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		200000000000000000000001 /* VideoKidnapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 300000000000000000000002 /* Build configuration list for PBXNativeTarget "VideoKidnapper" */;
+			buildPhases = (
+				200000000000000000000002 /* Sources */,
+				200000000000000000000003 /* Frameworks */,
+				200000000000000000000004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoKidnapper;
+			productName = VideoKidnapper;
+			productReference = 400000000000000000000001 /* VideoKidnapper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					200000000000000000000001 /* VideoKidnapper */ = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 300000000000000000000001 /* Build configuration list for PBXProject "VideoKidnapper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 100000000000000000000002;
+			productRefGroup = 100000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				200000000000000000000001 /* VideoKidnapper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		200000000000000000000004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				500000000000000000000015 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		200000000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				500000000000000000000001 /* VideoKidnapperApp.swift in Sources */,
+				500000000000000000000002 /* MediaModels.swift in Sources */,
+				500000000000000000000003 /* ContentView.swift in Sources */,
+				500000000000000000000004 /* ImportView.swift in Sources */,
+				500000000000000000000005 /* TrimView.swift in Sources */,
+				500000000000000000000006 /* CaptionsView.swift in Sources */,
+				500000000000000000000007 /* ExportView.swift in Sources */,
+				500000000000000000000008 /* VideoProjectStore.swift in Sources */,
+				500000000000000000000009 /* VideoImporter.swift in Sources */,
+				500000000000000000000010 /* VideoCompositor.swift in Sources */,
+				500000000000000000000011 /* VideoExporter.swift in Sources */,
+				500000000000000000000012 /* PlayerView.swift in Sources */,
+				500000000000000000000013 /* ColorHex.swift in Sources */,
+				500000000000000000000014 /* Formatting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		300000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		300000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		300000000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VideoKidnapper/VideoKidnapper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VideoKidnapper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "VideoKidnapper saves your exported videos to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VideoKidnapper needs access to your photo library so you can choose videos to edit.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aes256.videokidnapper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		300000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VideoKidnapper/VideoKidnapper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VideoKidnapper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "VideoKidnapper saves your exported videos to your photo library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "VideoKidnapper needs access to your photo library so you can choose videos to edit.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aes256.videokidnapper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		300000000000000000000001 /* Build configuration list for PBXProject "VideoKidnapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				300000000000000000000003 /* Debug */,
+				300000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		300000000000000000000002 /* Build configuration list for PBXNativeTarget "VideoKidnapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				300000000000000000000005 /* Debug */,
+				300000000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000001 /* Project object */;
+}
