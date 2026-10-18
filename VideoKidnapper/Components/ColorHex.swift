@@ -25,7 +25,7 @@ func hexString(for color: Color) -> String {
     #if canImport(UIKit)
     let platform = UIColor(color)
     #elseif canImport(AppKit)
-    let platform = NSColor(color) ?? NSColor.white
+    let platform = NSColor(color)
     #endif
     var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
     platform.getRed(&r, green: &g, blue: &b, alpha: &a)
