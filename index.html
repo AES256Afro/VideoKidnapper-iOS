@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoKidnapper — Trim, caption &amp; share video on every device</title>
+<meta name="description" content="VideoKidnapper is a fast, focused video editor for iPhone, iPad, Mac, Windows, and Linux. Trim clips, add styled captions, and export MP4 or GIF.">
+<style>
+  :root {
+    --navy: #182840;
+    --navy-2: #22334f;
+    --cream: #f6f1e7;
+    --orange: #e8912d;
+    --orange-2: #d17f1f;
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif;
+    margin: 0; color: var(--ink); background: #fff; line-height: 1.6;
+  }
+  a { color: var(--orange-2); }
+  /* Nav */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9rem 1.5rem; background: var(--navy); color: #fff;
+    position: sticky; top: 0; z-index: 10;
+  }
+  nav .brand { display: flex; align-items: center; gap: 0.6rem; color: #fff; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+  nav .brand img { width: 32px; height: 32px; border-radius: 8px; }
+  nav .links a { color: #d7dce5; text-decoration: none; margin-left: 1.4rem; font-size: 0.95rem; }
+  nav .links a:hover { color: #fff; }
+  /* Hero */
+  .hero {
+    background: radial-gradient(1200px 500px at 50% -10%, var(--navy-2), var(--navy));
+    color: #fff; text-align: center; padding: 4.5rem 1.5rem 3.5rem;
+  }
+  .hero img.logo { width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+  .hero h1 { font-size: 3rem; margin: 1.2rem 0 0.4rem; letter-spacing: -0.02em; }
+  .hero p.tag { font-size: 1.25rem; color: #c9d2e0; max-width: 36rem; margin: 0 auto 2rem; }
+  .cta-row { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.8rem 1.6rem; border-radius: 999px; font-weight: 600; font-size: 1rem;
+    text-decoration: none; transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-orange { background: var(--orange); color: #1a1206; box-shadow: 0 4px 18px rgba(232,145,45,.4); }
+  .btn-ghost { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.25); }
+  .btn .sub { font-weight: 400; font-size: 0.8rem; opacity: 0.75; }
+  /* Sections */
+  section.block { max-width: 66rem; margin: 0 auto; padding: 3.5rem 1.5rem; }
+  section.block h2 { font-size: 2rem; letter-spacing: -0.02em; margin: 0 0 0.5rem; text-align: center; }
+  section.block p.lede { text-align: center; color: var(--muted); max-width: 40rem; margin: 0 auto 2.5rem; }
+  /* Platform cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+  .card {
+    border: 1px solid #e6e1d5; border-radius: 16px; padding: 1.6rem;
+    background: #fff; box-shadow: 0 2px 12px rgba(24,40,64,.06);
+    display: flex; flex-direction: column;
+  }
+  .card.featured { border: 2px solid var(--orange); background: linear-gradient(180deg, #fffdf8, #fff); }
+  .card .plat { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+  .card h3 { margin: 0.3rem 0 0.6rem; font-size: 1.3rem; }
+  .card p { color: var(--muted); font-size: 0.95rem; flex: 1; }
+  .card .dl { margin-top: 1rem; display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .pill {
+    display: inline-block; padding: 0.55rem 1.1rem; border-radius: 999px;
+    background: var(--navy); color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600;
+  }
+  .pill:hover { background: var(--navy-2); }
+  .pill.orange { background: var(--orange); color: #1a1206; }
+  .pill.orange:hover { background: var(--orange-2); }
+  .pill.dim { background: #e9e4d8; color: #6b6252; cursor: default; }
+  .note { font-size: 0.82rem; color: var(--muted); margin-top: 0.7rem; }
+  /* Features */
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 1rem; }
+  .feat { padding: 1.2rem 0; }
+  .feat .icon { font-size: 1.8rem; }
+  .feat h3 { margin: 0.5rem 0 0.3rem; font-size: 1.05rem; }
+  .feat p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+  /* Privacy strip */
+  .privacy-strip { background: var(--cream); border-top: 1px solid #e6e1d5; border-bottom: 1px solid #e6e1d5; }
+  .privacy-strip .inner { max-width: 66rem; margin: 0 auto; padding: 2.5rem 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+  .privacy-strip .txt { flex: 1; min-width: 260px; }
+  .privacy-strip h2 { margin: 0 0 0.4rem; font-size: 1.4rem; }
+  .privacy-strip p { margin: 0; color: var(--muted); }
+  /* Footer */
+  footer { background: var(--navy); color: #aeb8c9; padding: 2.5rem 1.5rem; text-align: center; font-size: 0.9rem; }
+  footer a { color: #d7dce5; text-decoration: none; margin: 0 0.7rem; }
+  footer a:hover { color: #fff; }
+  footer .fine { margin-top: 1rem; font-size: 0.8rem; color: #7d889c; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="/">
+    <img src="https://raw.githubusercontent.com/AES256Afro/VideoKidnapper/main/assets/branding/logo-1024.png" alt="VideoKidnapper logo">
+    VideoKidnapper
+  </a>
+  <div class="links">
+    <a href="#platforms">Get the app</a>
+    <a href="#features">Features</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="https://github.com/AES256Afro/VideoKidnapper">GitHub</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="logo" src="https://raw.githubusercontent.com/AES256Afro/VideoKidnapper/main/assets/branding/logo-1024.png" alt="VideoKidnapper logo">
+  <h1>VideoKidnapper</h1>
+  <p class="tag">Trim the moment, caption it, share it. A fast, focused video editor for iPhone, iPad, Mac, Windows, and Linux.</p>
+  <div class="cta-row">
+    <a class="btn btn-orange" href="#platforms">Get VideoKidnapper</a>
+    <a class="btn btn-ghost" href="https://github.com/AES256Afro/VideoKidnapper/releases/latest"><span class="sub">Desktop</span>&nbsp;Latest release</a>
+  </div>
+</header>
+
+<section class="block" id="platforms">
+  <h2>One app, every device</h2>
+  <p class="lede">The all-new VideoKidnapper for iPhone, iPad, and Mac is on its way to the App Store. The full desktop studio is available now.</p>
+  <div class="cards">
+
+    <div class="card featured">
+      <div class="plat">iPhone &amp; iPad</div>
+      <h3>VideoKidnapper for iOS</h3>
+      <p>Import from your photo library, trim with frame-accurate precision, add styled captions, and export MP4 or GIF — all on device, no account, no watermark.</p>
+      <div class="dl">
+        <span class="pill dim">App Store — coming soon</span>
+      </div>
+      <p class="note">Requires iOS / iPadOS 17 or later.</p>
+    </div>
+
+    <div class="card featured">
+      <div class="plat">Mac</div>
+      <h3>VideoKidnapper for macOS</h3>
+      <p>The same fast editor, native on the Mac. Trim, caption, reframe for any platform, and export — sandboxed and App Store safe.</p>
+      <div class="dl">
+        <span class="pill dim">Mac App Store — coming soon</span>
+      </div>
+      <p class="note">Requires macOS 14 or later.</p>
+    </div>
+
+    <div class="card">
+      <div class="plat">Windows</div>
+      <h3>VideoKidnapper Desktop</h3>
+      <p>The full studio: download from 1,000+ sites, motion-tracked captions, overlays, screen recording, batch export, and more.</p>
+      <div class="dl">
+        <a class="pill orange" href="https://apps.microsoft.com/detail/9N4BMTK8Q7KG">Microsoft Store</a>
+        <a class="pill" href="https://github.com/AES256Afro/VideoKidnapper/releases/latest">Direct download</a>
+      </div>
+      <p class="note">Also via <code>winget</code>. Auto-updates through the Store.</p>
+    </div>
+
+    <div class="card">
+      <div class="plat">Linux</div>
+      <h3>VideoKidnapper Desktop</h3>
+      <p>The full studio for Linux, with FFmpeg bundled. AppImage, .deb, APT repository, or PyPI — pick your install.</p>
+      <div class="dl">
+        <a class="pill orange" href="https://github.com/AES256Afro/VideoKidnapper/releases/latest">Download AppImage / .deb</a>
+      </div>
+      <p class="note"><code>chmod +x VideoKidnapper-x86_64.AppImage</code> and run.</p>
+    </div>
+
+    <div class="card">
+      <div class="plat">macOS · Desktop</div>
+      <h3>VideoKidnapper Desktop</h3>
+      <p>The full studio as a signed &amp; notarized .dmg — web downloading, Whisper auto-captions, and everything else, outside the App Store sandbox.</p>
+      <div class="dl">
+        <a class="pill orange" href="https://github.com/AES256Afro/VideoKidnapper/releases/latest">Download .dmg</a>
+      </div>
+      <p class="note">Apple Silicon and Intel builds.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="block" id="features">
+  <h2>Built for the edit</h2>
+  <p class="lede">Everything you need to go from clip to shareable — nothing you don't.</p>
+  <div class="features">
+    <div class="feat">
+      <div class="icon">✂️</div>
+      <h3>Frame-accurate trim</h3>
+      <p>Set in and out points to the exact frame. Queue multiple cuts from one video.</p>
+    </div>
+    <div class="feat">
+      <div class="icon">💬</div>
+      <h3>Styled captions</h3>
+      <p>Pick fonts, sizes, colors, outlines, and positions. What you see is what exports.</p>
+    </div>
+    <div class="feat">
+      <div class="icon">🎞️</div>
+      <h3>MP4 &amp; GIF export</h3>
+      <p>Hardware-encoded MP4s and tuned GIFs, ready for any feed.</p>
+    </div>
+    <div class="feat">
+      <div class="icon">📐</div>
+      <h3>Reframe for any platform</h3>
+      <p>Original, 16:9, 9:16, or 1:1 — one tap to fit Shorts, Reels, TikTok, or widescreen.</p>
+    </div>
+    <div class="feat">
+      <div class="icon">🔒</div>
+      <h3>Private by design</h3>
+      <p>No account, no analytics, no upload. Your videos never leave your device. <a href="/privacy.html">Privacy policy</a></p>
+    </div>
+    <div class="feat">
+      <div class="icon">⚡</div>
+      <h3>No watermark, no fuss</h3>
+      <p>Free to use, clean exports, open source. Just edit and share.</p>
+    </div>
+  </div>
+</section>
+
+<div class="privacy-strip">
+  <div class="inner">
+    <div class="txt">
+      <h2>Your videos stay yours</h2>
+      <p>VideoKidnapper does not collect, store, or transmit any personal data. The iOS and Mac App Store versions work entirely offline.</p>
+    </div>
+    <a class="pill" href="/privacy.html">Read the privacy policy</a>
+  </div>
+</div>
+
+<footer>
+  <a href="/privacy.html">Privacy Policy</a>
+  <a href="https://github.com/AES256Afro/VideoKidnapper-iOS">iOS / Mac app source</a>
+  <a href="https://github.com/AES256Afro/VideoKidnapper">Desktop source</a>
+  <a href="https://github.com/AES256Afro/VideoKidnapper/releases/latest">Downloads</a>
+  <div class="fine">© 2026 Christopher Courtney · VideoKidnapper is open source under Apache-2.0</div>
+</footer>
+
+</body>
+</html>
